@@ -8,13 +8,11 @@ APP.use(express.static(__dirname + '/public'))
 
 APP.get('/', (req, res) => {
     // res.send('<h1>Hello Express!<?h1>');
-    res.send({
-        name: 'Tim',
-        likes: [
-            'music',
-            'food'
-        ]
-    })
+    res.render('home.hbs', {
+        pageTitle: 'Home Page',
+        welcomeMessage: 'Welcome to this website',
+        currentYear: new Date().getFullYear()
+    });
 });
 
 APP.get('/about', (req, res) => {
