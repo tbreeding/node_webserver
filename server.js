@@ -2,6 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const PORT = process.env.PORT || 3000;
 const APP = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -52,6 +53,6 @@ APP.get('/bad', (req, res) => {
     }); 
  });
 
-APP.listen(3000, () => {
-    console.log('Server is up on port 3000');
+APP.listen(PORT, () => {
+    console.log(`Server is up on port ${PORT}`);
 });
